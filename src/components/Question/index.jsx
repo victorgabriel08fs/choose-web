@@ -2,7 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export function Question({ alt1, alt2, choosed, setChoosed }) {
-    console.log(choosed);
     const [result, setResult] = useState({});
 
     function getResult(alt1, alt2) {

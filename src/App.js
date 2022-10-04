@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Loading } from './components/Loading';
 import { Question } from './components/Question';
+import { FaWhatsappSquare } from 'react-icons/fa';
 
 function App() {
   const [alts, setAlts] = useState([]);
@@ -32,10 +33,15 @@ function App() {
 
 
   return (
-    <div className="App App-header">
-      {loading ? <Loading /> : <Question choosed={choosed} setChoosed={setChoosed} alt1={alts[0]} alt2={alts[1]} />}
-      <button className="mt-2" onClick={handleNext}>Next</button>
-    </div>
+    <>
+      <div className="App App-header">
+        {loading ? <Loading /> : <Question choosed={choosed} setChoosed={setChoosed} alt1={alts[0]} alt2={alts[1]} />}
+        <button className="mt-2" onClick={handleNext}>Próximo</button>
+      {choosed?<footer className='mt-16 text-lg flex items-center justify-center'>
+        Se você está usando este app, sinta-se privilegiado... Incentive o trabalho de um programador, mande um "olá" - <FaWhatsappSquare /> - (38)  99158-7105
+      </footer>:''}
+      </div>
+    </>
   );
 }
 

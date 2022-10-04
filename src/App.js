@@ -11,7 +11,7 @@ function App() {
   const [choosed, setChoosed] = useState(false);
 
   function handleNext() {
-    axios.get("http://localhost:3333/alternative/random").then(async (response) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/alternative/random`).then(async (response) => {
       var data = await response.data;
       setAlts(data);
       setLoading(false);
@@ -20,7 +20,7 @@ function App() {
   }
 
   function getAlts() {
-    axios.get("http://localhost:3333/alternative/random").then(async (response) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/alternative/random`).then(async (response) => {
       var data = await response.data;
       setAlts(data);
       setLoading(false);

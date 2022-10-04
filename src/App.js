@@ -35,11 +35,12 @@ function App() {
   return (
     <>
       <div className="App App-header">
+        <h1 className='text-3xl mb-9'>Choose</h1>
         {loading ? <Loading /> : <Question choosed={choosed} setChoosed={setChoosed} alt1={alts[0]} alt2={alts[1]} />}
         <button className="mt-2" onClick={handleNext}>Próximo</button>
-      {choosed?<footer className='mt-16 text-lg flex items-center justify-center'>
-        Se você está usando este app, sinta-se privilegiado... Incentive o trabalho de um programador, mande um "olá" - <FaWhatsappSquare /> - (38)  99158-7105
-      </footer>:''}
+        {choosed ? <footer className='max-w-[50vw] mt-16 flex items-center'>
+          Se você está usando este app, sinta-se privilegiado... Incentive o trabalho de um programador, mande um "olá" - (38)99158-7105 (Victor)
+        </footer> : ''}
       </div>
     </>
   );

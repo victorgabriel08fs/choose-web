@@ -39,7 +39,7 @@ function App() {
         {loading ? <Loading /> : <Question choosed={choosed} setChoosed={setChoosed} alt1={alts[0]} alt2={alts[1]} />}
         <button className="mt-2" onClick={handleNext}>Próximo</button>
         {choosed ? <footer className='max-w-[50vw] mt-16 flex items-center'>
-          Se você está usando este app, sinta-se privilegiado... Incentive o trabalho de um programador, mande um "olá" - (38)99158-7105 (Victor)
+          
         </footer> : ''}
       </div>
     </>

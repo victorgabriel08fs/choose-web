@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useAuth } from "../../contexts/auth";
 
 export function Question({ alt1, alt2, choosed, setChoosed }) {
     const [result, setResult] = useState({});
+    const {user} = useAuth();
 
     function getResult(alt1, alt2) {
         axios.get(`${process.env.REACT_APP_API_URL}/question/result/${alt1}/${alt2}`).then(async (response) => {
@@ -13,7 +15,7 @@ export function Question({ alt1, alt2, choosed, setChoosed }) {
 
     async function vote(side) {
         axios.post(`${process.env.REACT_APP_API_URL}/question`,
-            { alt1: alt1.id, alt2: alt2.id, choose: side.id }
+            { alt1: alt1.id, alt2: alt2.id, choose: side.id,userId:user.id }
         ).then(async response => {
             var data = await response.data;
             setChoosed(true)

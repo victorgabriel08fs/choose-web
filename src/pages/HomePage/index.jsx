@@ -35,7 +35,7 @@ const HomePage = () => {
     <div className="App App-header">
       <h1 className='text-3xl mb-9'>Choose</h1>
       {loading ? <Loading /> : <Question choosed={choosed} setChoosed={setChoosed} alt1={alts[0]} alt2={alts[1]} />}
-      <button className="mt-2" onClick={handleNext}>Próximo</button>
+      <button className="mt-2" onClick={handleNext}>Next</button>
       {choosed ? <footer className='max-w-[50vw] mt-16 flex items-center'>
 
       </footer> : ''}

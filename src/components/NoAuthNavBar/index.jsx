@@ -21,10 +21,10 @@ const NoAuthNavBar = () => {
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <Link to="/login" className={pathname==='/login'?currentPageStyle:notCurrentPageStyle} aria-current="page">Entrar</Link>
+                            <Link to="/login" className={pathname==='/login'?currentPageStyle:notCurrentPageStyle} aria-current="page">Sign In</Link>
                         </li>
                         <li>
-                            <Link to="/signup" className={pathname==='/signup'?currentPageStyle:notCurrentPageStyle}>Criar conta</Link>
+                            <Link to="/signup" className={pathname==='/signup'?currentPageStyle:notCurrentPageStyle}>Sign Up</Link>
                         </li>
                     </ul>
                 </div>

@@ -115,7 +115,7 @@ const StyledSubTrigger = styled(DropdownMenuPrimitive.SubTrigger, {
 
 const StyledLabel = styled(DropdownMenuPrimitive.Label, {
     paddingLeft: 25,
-    fontSize: 12,
+    fontSize: 14,
     lineHeight: '25px',
     color: mauve.mauve11,
 });
@@ -192,6 +192,8 @@ export const DropdownMenu = () => {
                 </DropdownMenuTrigger>
 
                 <DropdownMenuContent sideOffset={5}>
+                    <DropdownMenuLabel>{context.user.name}</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
                     {context.user.isAdmin ? (
                         <>
                             <DropdownMenuItem>
@@ -206,9 +208,9 @@ export const DropdownMenu = () => {
                     <DropdownMenuItem>
                         Profile
                     </DropdownMenuItem>
-                    
+
                     <DropdownMenuSeparator />
-                    
+
                     <DropdownMenuItem onClick={handleLogout}>
                         Logout
                     </DropdownMenuItem>

@@ -5,10 +5,10 @@ import AuthNavBar from '../components/AuthNavBar';
 
 import HomePage from '../pages/HomePage';
 import { useAuth } from '../contexts/auth';
-import AdminRoutes from './AdminRoutes';
 import UsersPage from '../pages/UsersPage';
+import VotesPage from '../pages/VotesPage';
 
-const OtherRoutes = () => {
+const AdminRoutes = () => {
     const { user } = useAuth();
     return (
         <BrowserRouter>
@@ -17,6 +17,8 @@ const OtherRoutes = () => {
             <Body>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/users" element={<UsersPage />} />
+                    <Route path="/votes" element={<VotesPage />} />
                     <Route path='*' element={<Navigate to="/" />} />
                 </Routes>
             </Body>
@@ -24,4 +26,4 @@ const OtherRoutes = () => {
     );
 };
 
-export default OtherRoutes;
+export default AdminRoutes;

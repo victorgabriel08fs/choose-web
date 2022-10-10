@@ -2,12 +2,13 @@
 import SignRoutes from './SignRoutes';
 import OtherRoutes from './OtherRoutes';
 import { useAuth } from '../contexts/auth';
+import AdminRoutes from './AdminRoutes';
 
 const Routes = () => {
-    const { signed } = useAuth();
+    const { signed, user } = useAuth();
 
     return (
-        signed ? <OtherRoutes /> : <SignRoutes />
+        signed ? (user.isAdmin ? <AdminRoutes /> : <OtherRoutes />) : <SignRoutes />
     );
 };
 

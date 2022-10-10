@@ -9,6 +9,7 @@ import {
 } from '@radix-ui/react-icons';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { useAuth } from '../../contexts/auth';
+import { Link } from 'react-router-dom';
 
 const slideUpAndFade = keyframes({
     '0%': { opacity: 0, transform: 'translateY(2px)' },
@@ -196,12 +197,16 @@ export const DropdownMenu = () => {
                     <DropdownMenuSeparator />
                     {context.user.isAdmin ? (
                         <>
-                            <DropdownMenuItem>
-                                Users
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                Votes
-                            </DropdownMenuItem>
+                            <Link to="/users">
+                                <DropdownMenuItem>
+                                    Users
+                                </DropdownMenuItem>
+                            </Link>
+                            <Link to="/votes">
+                                <DropdownMenuItem>
+                                    Votes
+                                </DropdownMenuItem>
+                            </Link>
                             <DropdownMenuSeparator />
                         </>
                     ) : ''}

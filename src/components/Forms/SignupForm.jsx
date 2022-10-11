@@ -19,7 +19,7 @@ const SignupForm = () => {
         });
 
         if (response.status === 201) {
-            //     context.Login({ email, password });
+            context.Login({ email, password });
             navigate("/");
         }
     }
